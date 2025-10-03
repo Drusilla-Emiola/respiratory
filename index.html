@@ -1,0 +1,36 @@
+cloud project presentation
+
+# google_dork_generator.py
+
+# Common dork patterns
+dorks = [
+    'site:{}',
+    'intitle:{}',
+    'inurl:{}',
+    'filetype:{}',
+    'site:{} inurl:{}',
+    'site:{} intitle:{}',
+    'site:{} filetype:{}'
+]
+
+# Keywords or targets
+keywords = [
+    'login',
+    'admin',
+    'password',
+    'confidential',
+    'report'
+]
+
+# Domain examples (replace with your test domains!)
+domains = [
+    'example.com',
+    'testsite.local',
+    'university.edu'
+]
+
+# Generate queries
+for domain in domains:
+    for keyword in keywords:
+        for pattern in dorks:
+            print(pattern.format(domain, keyword))
